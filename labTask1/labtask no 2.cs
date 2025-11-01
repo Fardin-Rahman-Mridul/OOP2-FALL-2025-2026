@@ -2,7 +2,7 @@
 
 public class LabTaskNo2
 {
-    public static void Main(string[] args)
+    public static void MainTask2(string[] args) 
     {
         double originalPrice = 250.0;
         double discountRate = 15.0;
