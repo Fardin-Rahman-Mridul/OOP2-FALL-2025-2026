@@ -6,7 +6,7 @@ class Program
     static void Main()
     {
         CultureInfo bdCulture = new CultureInfo("bn-BD");
-        Console.WriteLine("=== Mortgage Calculator (Bangladesh) ===\n");
+        Console.WriteLine("----Mortgage Calculator (Bangladesh)---\n");
 
         double salary = 0;
         double creditScore = 0;
@@ -54,13 +54,13 @@ class Program
         }
 
         //eligibility----
+
         if (!(creditScore >= 300 && creditScore <= 500 && criminalRecord == false))
         {
             Console.WriteLine("\nSorry, you are not eligible for a loan.");
             Console.WriteLine("Reason: You must have a good credit score (300 - 500) and no criminal record.");
             return;
         }
-
         Console.WriteLine("\nYou are eligible! Proceeding with loan calculation...\n");
 
         //loan------
@@ -101,9 +101,9 @@ class Program
         //output-----
         Console.WriteLine("\n----- Mortgage Summary----");
         Console.WriteLine($"Monthly Salary: {salary.ToString("", bdCulture)} Taka");
-        Console.WriteLine($"Credit Score: {creditScore} Taka");
-        Console.WriteLine($"Criminal Record: {criminalRecord} Taka");
-        Console.WriteLine($"Loan Amount: {principal.ToString("", bdCulture)}Taka");
+        Console.WriteLine($"Credit Score: {creditScore} ");
+        Console.WriteLine($"Criminal Record: {criminalRecord} ");
+        Console.WriteLine($"Loan Amount: {principal.ToString("", bdCulture)} Taka");
         Console.WriteLine($"Monthly Payment: {monthlyPayment.ToString("", bdCulture)} Taka");
         Console.WriteLine($"Total Payment: {totalPaid.ToString("", bdCulture)} Taka");
         Console.WriteLine($"Total Interest: {totalInterest.ToString("", bdCulture)} Taka");
