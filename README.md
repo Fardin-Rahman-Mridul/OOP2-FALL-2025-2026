@@ -92,7 +92,8 @@ Working Calculator--->
 Mortgage Calculator (Bangladesh)--->
 
 
-<img width="580" height="277" alt="image" src="https://github.com/user-attachments/assets/c8234028-e045-4476-85fa-2dd771aa7c26" />
+<img width="733" height="631" alt="image" src="https://github.com/user-attachments/assets/8c175afe-2ccc-4c3a-8abb-e5abbeba99fd" />
+
 
 
 ---
@@ -108,4 +109,6 @@ This project is licensed under the **MIT License** - see the `LICENSE` file for 
 ### 🙏 Acknowledgements
 
 *   A special thank you to the course instructor WAHIDUL ALAM RIYAD Sir ! for his teaching assistants , the guidance and support throughout the semester.
+
+
 
