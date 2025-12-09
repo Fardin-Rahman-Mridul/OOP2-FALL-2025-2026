@@ -9,7 +9,7 @@ abstract class Employee
         basicSalary = salary;
     }
 
-    protected double GetBasicSalary()    
+    protected double GetBasicSalary()   
     {
         return basicSalary;
     }

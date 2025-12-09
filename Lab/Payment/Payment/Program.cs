@@ -2,22 +2,22 @@
 
 abstract class Payment
 {
-    public abstract void ProcessPayment(double amount);
+    public abstract string ProcessPayment(double amount);
 }
 
 class BkashPayment : Payment
 {
-    public override void ProcessPayment(double amount)
+    public override string ProcessPayment(double amount)
     {
-        Console.WriteLine("Processing Bkash payment: " + amount);
+        return "Processing Bkash payment: " + amount;
     }
 }
 
 class CreditCardPayment : Payment
 {
-    public override void ProcessPayment(double amount)
+    public override string ProcessPayment(double amount)
     {
-        Console.WriteLine("Processing Credit Card payment: " + amount);
+        return "Processing Credit Card payment: " + amount;
     }
 }
 
@@ -28,7 +28,7 @@ class Program
         Payment p1 = new BkashPayment();
         Payment p2 = new CreditCardPayment();
 
-        p1.ProcessPayment(500);
-        p2.ProcessPayment(1200);
+        Console.WriteLine(p1.ProcessPayment(500));
+        Console.WriteLine(p2.ProcessPayment(1200));
     }
 }
