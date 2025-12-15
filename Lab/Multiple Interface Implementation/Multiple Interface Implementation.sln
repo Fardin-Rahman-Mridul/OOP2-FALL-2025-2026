@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiple Interface Implementation", "Multiple Interface Implementation\Multiple Interface Implementation.csproj", "{EA58A57D-0D5B-45C9-9B30-8239475A265D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA58A57D-0D5B-45C9-9B30-8239475A265D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA58A57D-0D5B-45C9-9B30-8239475A265D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA58A57D-0D5B-45C9-9B30-8239475A265D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA58A57D-0D5B-45C9-9B30-8239475A265D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC38F270-9BC1-45E8-AE62-94BC5EB428A8}
+	EndGlobalSection
+EndGlobal
