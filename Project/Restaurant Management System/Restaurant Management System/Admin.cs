@@ -16,5 +16,10 @@ namespace Restaurant_Management_System
         {
             InitializeComponent();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
