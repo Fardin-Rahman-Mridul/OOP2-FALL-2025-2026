@@ -33,7 +33,21 @@
             lblPassword = new Label();
             lblRole = new Label();
             lblUserID = new Label();
-            lbl = new Label();
+            lblSearchBy = new Label();
+            lblSearch = new Label();
+            txtName = new TextBox();
+            txtPassword = new TextBox();
+            txtRole = new TextBox();
+            txtUserID = new TextBox();
+            txtSearch = new TextBox();
+            dgvManageUsers = new DataGridView();
+            btnAdd = new Button();
+            btnDelete = new Button();
+            btnUpdate = new Button();
+            btnClear = new Button();
+            btnBack = new Button();
+            cmbSearchBy = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvManageUsers).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -94,31 +108,180 @@
             lblUserID.TabIndex = 5;
             lblUserID.Text = "User ID";
             // 
-            // lbl
+            // lblSearchBy
             // 
-            lbl.AutoSize = true;
-            lbl.BackColor = Color.Transparent;
-            lbl.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl.ForeColor = Color.Black;
-            lbl.Location = new Point(639, 99);
-            lbl.Name = "lbl";
-            lbl.Size = new Size(120, 28);
-            lbl.TabIndex = 6;
-            lbl.Text = "Search By";
+            lblSearchBy.AutoSize = true;
+            lblSearchBy.BackColor = Color.Transparent;
+            lblSearchBy.Font = new Font("Cambria", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSearchBy.ForeColor = Color.Black;
+            lblSearchBy.Location = new Point(677, 99);
+            lblSearchBy.Name = "lblSearchBy";
+            lblSearchBy.Size = new Size(100, 23);
+            lblSearchBy.TabIndex = 6;
+            lblSearchBy.Text = "Search By";
+            // 
+            // lblSearch
+            // 
+            lblSearch.AutoSize = true;
+            lblSearch.BackColor = Color.Transparent;
+            lblSearch.Font = new Font("Cambria", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSearch.ForeColor = Color.Black;
+            lblSearch.Location = new Point(695, 172);
+            lblSearch.Name = "lblSearch";
+            lblSearch.Size = new Size(72, 23);
+            lblSearch.TabIndex = 7;
+            lblSearch.Text = "Search";
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(196, 99);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(331, 31);
+            txtName.TabIndex = 8;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(196, 143);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(331, 31);
+            txtPassword.TabIndex = 9;
+            // 
+            // txtRole
+            // 
+            txtRole.Location = new Point(196, 194);
+            txtRole.Name = "txtRole";
+            txtRole.Size = new Size(331, 31);
+            txtRole.TabIndex = 10;
+            // 
+            // txtUserID
+            // 
+            txtUserID.Location = new Point(196, 240);
+            txtUserID.Name = "txtUserID";
+            txtUserID.Size = new Size(331, 31);
+            txtUserID.TabIndex = 11;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(622, 198);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(212, 31);
+            txtSearch.TabIndex = 12;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            // 
+            // dgvManageUsers
+            // 
+            dgvManageUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvManageUsers.Location = new Point(37, 376);
+            dgvManageUsers.Name = "dgvManageUsers";
+            dgvManageUsers.RowHeadersWidth = 62;
+            dgvManageUsers.Size = new Size(870, 225);
+            dgvManageUsers.TabIndex = 14;
+            dgvManageUsers.DoubleClick += dgvManageUsers_DoubleClick;
+            // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = Color.RoyalBlue;
+            btnAdd.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.Transparent;
+            btnAdd.Location = new Point(112, 298);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(118, 55);
+            btnAdd.TabIndex = 15;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.Brown;
+            btnDelete.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.ForeColor = Color.Transparent;
+            btnDelete.Location = new Point(414, 298);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(118, 55);
+            btnDelete.TabIndex = 16;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.SteelBlue;
+            btnUpdate.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdate.ForeColor = Color.Transparent;
+            btnUpdate.Location = new Point(259, 298);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(118, 55);
+            btnUpdate.TabIndex = 17;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.SlateGray;
+            btnClear.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClear.ForeColor = Color.Transparent;
+            btnClear.Location = new Point(568, 298);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(118, 55);
+            btnClear.TabIndex = 18;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = Color.ForestGreen;
+            btnBack.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = Color.Transparent;
+            btnBack.Location = new Point(724, 298);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(118, 55);
+            btnBack.TabIndex = 19;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
+            // 
+            // cmbSearchBy
+            // 
+            cmbSearchBy.FormattingEnabled = true;
+            cmbSearchBy.Items.AddRange(new object[] { "Name", "Role", "User ID" });
+            cmbSearchBy.Location = new Point(622, 125);
+            cmbSearchBy.Name = "cmbSearchBy";
+            cmbSearchBy.Size = new Size(212, 33);
+            cmbSearchBy.TabIndex = 20;
+            cmbSearchBy.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // Manage_Users
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(962, 533);
-            Controls.Add(lbl);
+            BackColor = Color.NavajoWhite;
+            ClientSize = new Size(928, 613);
+            Controls.Add(cmbSearchBy);
+            Controls.Add(btnBack);
+            Controls.Add(btnClear);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnDelete);
+            Controls.Add(btnAdd);
+            Controls.Add(dgvManageUsers);
+            Controls.Add(txtSearch);
+            Controls.Add(txtUserID);
+            Controls.Add(txtRole);
+            Controls.Add(txtPassword);
+            Controls.Add(txtName);
+            Controls.Add(lblSearch);
+            Controls.Add(lblSearchBy);
             Controls.Add(lblUserID);
             Controls.Add(lblRole);
             Controls.Add(lblPassword);
             Controls.Add(lblName);
             Controls.Add(label1);
             Name = "Manage_Users";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Manage_Users";
+            ((System.ComponentModel.ISupportInitialize)dgvManageUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -130,6 +293,19 @@
         private Label lblPassword;
         private Label lblRole;
         private Label lblUserID;
-        private Label lbl;
+        private Label lblSearchBy;
+        private Label lblSearch;
+        private TextBox txtName;
+        private TextBox txtPassword;
+        private TextBox txtRole;
+        private TextBox txtUserID;
+        private TextBox txtSearch;
+        private DataGridView dgvManageUsers;
+        private Button btnAdd;
+        private Button btnDelete;
+        private Button btnUpdate;
+        private Button btnClear;
+        private Button btnBack;
+        private ComboBox cmbSearchBy;
     }
 }

@@ -32,6 +32,7 @@
             btnManageMenu = new Button();
             btnManageUsers = new Button();
             btnLogOut = new Button();
+            btnSalesReport = new Button();
             SuspendLayout();
             // 
             // btnManageMenu
@@ -45,31 +46,46 @@
             btnManageMenu.TabIndex = 8;
             btnManageMenu.Text = "Manage Menu";
             btnManageMenu.UseVisualStyleBackColor = false;
+            btnManageMenu.Click += btnManageMenu_Click;
             // 
             // btnManageUsers
             // 
             btnManageUsers.BackColor = Color.Maroon;
             btnManageUsers.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnManageUsers.ForeColor = Color.Transparent;
-            btnManageUsers.Location = new Point(309, 54);
+            btnManageUsers.Location = new Point(32, 149);
             btnManageUsers.Name = "btnManageUsers";
             btnManageUsers.Size = new Size(235, 55);
             btnManageUsers.TabIndex = 9;
             btnManageUsers.Text = "Manage Users";
             btnManageUsers.UseVisualStyleBackColor = false;
+            btnManageUsers.Click += btnManageUsers_Click;
             // 
             // btnLogOut
             // 
             btnLogOut.BackColor = Color.Crimson;
             btnLogOut.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogOut.ForeColor = Color.Transparent;
-            btnLogOut.Location = new Point(581, 54);
+            btnLogOut.Location = new Point(581, 325);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(159, 55);
             btnLogOut.TabIndex = 10;
             btnLogOut.Text = "Log Out";
             btnLogOut.UseVisualStyleBackColor = false;
             btnLogOut.Click += btnLogOut_Click;
+            // 
+            // btnSalesReport
+            // 
+            btnSalesReport.BackColor = Color.Maroon;
+            btnSalesReport.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSalesReport.ForeColor = Color.Transparent;
+            btnSalesReport.Location = new Point(32, 243);
+            btnSalesReport.Name = "btnSalesReport";
+            btnSalesReport.Size = new Size(235, 55);
+            btnSalesReport.TabIndex = 11;
+            btnSalesReport.Text = "Sales Report";
+            btnSalesReport.UseVisualStyleBackColor = false;
+            btnSalesReport.Click += btnSalesReport_Click;
             // 
             // Admin
             // 
@@ -78,11 +94,13 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSalesReport);
             Controls.Add(btnLogOut);
             Controls.Add(btnManageUsers);
             Controls.Add(btnManageMenu);
             DoubleBuffered = true;
             Name = "Admin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin";
             ResumeLayout(false);
         }
@@ -91,5 +109,6 @@
         private Button btnManageMenu;
         private Button btnManageUsers;
         private Button btnLogOut;
+        private Button btnSalesReport;
     }
 }
