@@ -167,6 +167,7 @@
             Controls.Add(lblCustomerName);
             Controls.Add(label1);
             DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Customer_Sign_Up";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Customer_Sign_Up";

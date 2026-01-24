@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff));
             lblBillingAndPaymentPanel = new Label();
             dgvBillAndPaymentPanel = new DataGridView();
-            txtSearchBy = new TextBox();
             txtSearch = new TextBox();
             lblSearch = new Label();
             lblSearchBy = new Label();
             btnGenerateBill = new Button();
             btnBack = new Button();
+            cmbSearchBy = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvBillAndPaymentPanel).BeginInit();
             SuspendLayout();
             // 
@@ -60,14 +60,6 @@
             dgvBillAndPaymentPanel.Size = new Size(850, 225);
             dgvBillAndPaymentPanel.TabIndex = 3;
             dgvBillAndPaymentPanel.DoubleClick += dgvBillAndPaymentPanel_DoubleClick;
-            // 
-            // txtSearchBy
-            // 
-            txtSearchBy.Location = new Point(51, 360);
-            txtSearchBy.Name = "txtSearchBy";
-            txtSearchBy.Size = new Size(212, 31);
-            txtSearchBy.TabIndex = 21;
-            txtSearchBy.TextChanged += txtSearchBy_TextChanged;
             // 
             // txtSearch
             // 
@@ -127,6 +119,16 @@
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
+            // cmbSearchBy
+            // 
+            cmbSearchBy.FormattingEnabled = true;
+            cmbSearchBy.Items.AddRange(new object[] { "CustomerID", "CustomerName" });
+            cmbSearchBy.Location = new Point(51, 360);
+            cmbSearchBy.Name = "cmbSearchBy";
+            cmbSearchBy.Size = new Size(212, 33);
+            cmbSearchBy.TabIndex = 26;
+            cmbSearchBy.SelectedIndexChanged += cmbSearchBy_SelectedIndexChanged;
+            // 
             // Staff
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -135,9 +137,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(964, 494);
+            Controls.Add(cmbSearchBy);
             Controls.Add(btnBack);
             Controls.Add(btnGenerateBill);
-            Controls.Add(txtSearchBy);
             Controls.Add(txtSearch);
             Controls.Add(lblSearch);
             Controls.Add(lblSearchBy);
@@ -145,6 +147,7 @@
             Controls.Add(lblBillingAndPaymentPanel);
             DoubleBuffered = true;
             ForeColor = Color.Black;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "Staff";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Staff";
@@ -158,11 +161,11 @@
 
         private Label lblBillingAndPaymentPanel;
         private DataGridView dgvBillAndPaymentPanel;
-        private TextBox txtSearchBy;
         private TextBox txtSearch;
         private Label lblSearch;
         private Label lblSearchBy;
         private Button btnGenerateBill;
         private Button btnBack;
+        private ComboBox cmbSearchBy;
     }
 }

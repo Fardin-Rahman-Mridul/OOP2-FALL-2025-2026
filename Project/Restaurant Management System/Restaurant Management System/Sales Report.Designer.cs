@@ -104,6 +104,7 @@
             Controls.Add(label1);
             Controls.Add(dgvSalesReport);
             DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Sales_Report";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sales_Report";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manage_Users));
             label1 = new Label();
             lblName = new Label();
             lblPassword = new Label();
@@ -53,6 +54,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(353, 22);
             label1.Name = "label1";
@@ -258,6 +260,8 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.NavajoWhite;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(928, 613);
             Controls.Add(cmbSearchBy);
             Controls.Add(btnBack);
@@ -278,6 +282,8 @@
             Controls.Add(lblPassword);
             Controls.Add(lblName);
             Controls.Add(label1);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Manage_Users";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Manage_Users";

@@ -45,5 +45,10 @@ namespace Restaurant_Management_System
             reportForm.Show();
             this.Hide();
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

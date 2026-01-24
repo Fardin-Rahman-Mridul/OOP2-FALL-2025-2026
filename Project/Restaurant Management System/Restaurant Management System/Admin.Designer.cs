@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             btnManageMenu = new Button();
             btnManageUsers = new Button();
             btnLogOut = new Button();
             btnSalesReport = new Button();
+            contextMenuStrip1 = new ContextMenuStrip(components);
             SuspendLayout();
             // 
             // btnManageMenu
@@ -40,7 +42,7 @@
             btnManageMenu.BackColor = Color.Maroon;
             btnManageMenu.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnManageMenu.ForeColor = Color.Transparent;
-            btnManageMenu.Location = new Point(32, 54);
+            btnManageMenu.Location = new Point(60, 55);
             btnManageMenu.Name = "btnManageMenu";
             btnManageMenu.Size = new Size(235, 55);
             btnManageMenu.TabIndex = 8;
@@ -53,7 +55,7 @@
             btnManageUsers.BackColor = Color.Maroon;
             btnManageUsers.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnManageUsers.ForeColor = Color.Transparent;
-            btnManageUsers.Location = new Point(32, 149);
+            btnManageUsers.Location = new Point(60, 150);
             btnManageUsers.Name = "btnManageUsers";
             btnManageUsers.Size = new Size(235, 55);
             btnManageUsers.TabIndex = 9;
@@ -79,13 +81,19 @@
             btnSalesReport.BackColor = Color.Maroon;
             btnSalesReport.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalesReport.ForeColor = Color.Transparent;
-            btnSalesReport.Location = new Point(32, 243);
+            btnSalesReport.Location = new Point(60, 244);
             btnSalesReport.Name = "btnSalesReport";
             btnSalesReport.Size = new Size(235, 55);
             btnSalesReport.TabIndex = 11;
             btnSalesReport.Text = "Sales Report";
             btnSalesReport.UseVisualStyleBackColor = false;
             btnSalesReport.Click += btnSalesReport_Click;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(24, 24);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // Admin
             // 
@@ -99,9 +107,11 @@
             Controls.Add(btnManageUsers);
             Controls.Add(btnManageMenu);
             DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Admin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin";
+            Load += Admin_Load;
             ResumeLayout(false);
         }
 
@@ -110,5 +120,6 @@
         private Button btnManageUsers;
         private Button btnLogOut;
         private Button btnSalesReport;
+        private ContextMenuStrip contextMenuStrip1;
     }
 }

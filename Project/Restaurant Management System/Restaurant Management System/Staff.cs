@@ -16,7 +16,7 @@ namespace Restaurant_Management_System
         private DataAccess Da { get; set; }
         private DataSet Ds { get; set; }
 
-        // For print
+        //print
         private PrintDocument printDoc = new PrintDocument();
         private string printBillText = "";
 
@@ -88,26 +88,42 @@ namespace Restaurant_Management_System
 
         private void txtSearchBy_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSearchBy.Text) || string.IsNullOrEmpty(txtSearch.Text))
+            if (string.IsNullOrEmpty(cmbSearchBy.Text) || string.IsNullOrEmpty(txtSearch.Text))
             {
                 LoadCustomerData();
                 return;
             }
 
-            string sql = $"SELECT * FROM Customer WHERE [{txtSearchBy.Text}] LIKE '{txtSearch.Text}%'";
+            string sql = $"SELECT * FROM Customer WHERE [{cmbSearchBy.Text}] LIKE '{txtSearch.Text}%'";
             LoadCustomerData(sql);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSearchBy.Text)) return;
 
-            string sql = $"SELECT * FROM Customer WHERE [{txtSearchBy.Text}] LIKE '{txtSearch.Text}%'";
+            if (string.IsNullOrEmpty(cmbSearchBy.Text)) return;
+
+            string sql = $"SELECT * FROM Customer WHERE [{cmbSearchBy.Text}] LIKE '{txtSearch.Text}%'";
             LoadCustomerData(sql);
+
         }
 
         private void Staff_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void cmbSearchBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(cmbSearchBy.Text) || string.IsNullOrEmpty(txtSearch.Text))
+            {
+                LoadCustomerData();
+                return;
+            }
+
+            string sql = $"SELECT * FROM Customer WHERE [{cmbSearchBy.Text}] LIKE '{txtSearch.Text}%'";
+            LoadCustomerData(sql);
 
         }
     }

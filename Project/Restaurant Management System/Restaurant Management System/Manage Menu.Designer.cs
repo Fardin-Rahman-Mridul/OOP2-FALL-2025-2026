@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manage_Menu));
             label1 = new Label();
             lblFoodID = new Label();
             lblFoodName = new Label();
@@ -53,6 +54,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(330, 27);
             label1.Name = "label1";
@@ -258,6 +260,8 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.NavajoWhite;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(882, 643);
             Controls.Add(cmbSearchBy);
             Controls.Add(dgvManageMenu);
@@ -278,6 +282,8 @@
             Controls.Add(lblFoodName);
             Controls.Add(lblFoodID);
             Controls.Add(label1);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Manage_Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Manage_Menu";

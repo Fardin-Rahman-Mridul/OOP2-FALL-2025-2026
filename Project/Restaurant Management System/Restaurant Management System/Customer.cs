@@ -79,56 +79,6 @@ namespace Restaurant_Management_System
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-
-
-
-            //if (txtCustomerID.Text == "" || txtCustomerName.Text == "" ||
-            //    txtFoodID.Text == "" || txtFoodName.Text == "" ||
-            //    txtQuantity.Text == "" || txtFoodPrice.Text == "")
-            //{
-            //    MessageBox.Show("Fill all fields before adding.");
-            //    return;
-            //}
-
-            //string sql = @"INSERT INTO Customer(CustomerID, CustomerName, FoodID, FoodName, Quantity, FoodPrice, TotalPrice)
-            //       VALUES (@CustomerID, @CustomerName, @FoodID, @FoodName, @Quantity, @FoodPrice, @TotalPrice)";
-
-            //try
-            //{
-            //    using (SqlConnection con = new SqlConnection(
-            //        @"Server=DESKTOP-SKDGCME\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True;TrustServerCertificate=True"))
-            //    {
-            //        con.Open();
-            //        SqlCommand cmd = new SqlCommand(sql, con);
-
-            //        cmd.Parameters.AddWithValue("@CustomerID", txtCustomerID.Text);
-            //        cmd.Parameters.AddWithValue("@CustomerName", txtCustomerName.Text);
-            //        cmd.Parameters.AddWithValue("@FoodID", txtFoodID.Text);
-            //        cmd.Parameters.AddWithValue("@FoodName", txtFoodName.Text);
-            //        cmd.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
-            //        cmd.Parameters.AddWithValue("@FoodPrice", txtFoodPrice.Text);
-            //        cmd.Parameters.AddWithValue("@TotalPrice", txtTotalPrice.Text);
-
-            //        int count = cmd.ExecuteNonQuery();
-            //        if (count == 1)
-            //        {
-            //            MessageBox.Show("Order Added!");
-            //            LoadCustomerOrder();   // 🔥 HERE (Refresh dgv)
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Failed to Add!");
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("DB Error: " + ex.Message);
-            //}
-
-            //ClearInput();
-
-
             if (txtCustomerID.Text == "" || txtCustomerName.Text == "" ||
                 txtFoodID.Text == "" || txtFoodName.Text == "" ||
                 txtQuantity.Text == "" || txtFoodPrice.Text == "")
@@ -142,7 +92,6 @@ namespace Restaurant_Management_System
             {
                 con.Open();
 
-                // Check if exists
                 string checkSql = "SELECT COUNT(*) FROM Customer WHERE CustomerID=@CustomerID";
                 SqlCommand cmdCheck = new SqlCommand(checkSql, con);
                 cmdCheck.Parameters.AddWithValue("@CustomerID", txtCustomerID.Text);
@@ -153,13 +102,11 @@ namespace Restaurant_Management_System
 
                 if (exists == 0)
                 {
-                    // First Time INSERT
                     sql = @"INSERT INTO Customer(CustomerID, CustomerName, FoodID, FoodName, Quantity, FoodPrice, TotalPrice)
                     VALUES(@CustomerID, @CustomerName, @FoodID, @FoodName, @Quantity, @FoodPrice, @TotalPrice)";
                 }
                 else
                 {
-                    // Next Time UPDATE (overwrite food info)
                     sql = @"UPDATE Customer SET 
                         FoodID = @FoodID,
                         FoodName = @FoodName,
@@ -183,7 +130,7 @@ namespace Restaurant_Management_System
             }
 
             LoadCustomerOrder();
-            MessageBox.Show("Order Updated Successfully!");
+            MessageBox.Show("Order Added Successfully!");
 
             ClearInput();
         }
@@ -195,22 +142,7 @@ namespace Restaurant_Management_System
         
         private void LoadCustomerOrder()
         {
-            //string sql = "SELECT * FROM Customer WHERE CustomerID = '" + txtCustomerID.Text + "'";
-            //DataSet ds = this.Da.ExecuteQuery(sql);
-            //dgvOrderSummary.DataSource = ds.Tables[0];
-
-
-            //string sql = "SELECT * FROM Customer WHERE CustomerID = '" + txtCustomerID.Text + "'";
-            //DataSet ds = this.Da.ExecuteQuery(sql);
-
-            //dgvOrderSummary.AutoGenerateColumns = true;   
-            //dgvOrderSummary.DataSource = ds.Tables[0];
-
-            //string sql = "SELECT * FROM Customer WHERE CustomerID = '" + txtCustomerID.Text + "'";
-            //DataSet ds = this.Da.ExecuteQuery(sql);
-
-            //dgvOrderSummary.AutoGenerateColumns = true;
-            //dgvOrderSummary.DataSource = ds.Tables[0];
+           
 
             string sql = "SELECT * FROM Customer WHERE CustomerID='" + txtCustomerID.Text + "'";
             DataSet ds = this.Da.ExecuteQuery(sql);

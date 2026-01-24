@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             txtSearch = new TextBox();
             lblSearch = new Label();
             lblSearchBy = new Label();
@@ -209,6 +210,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(462, 28);
             label1.Name = "label1";
@@ -346,6 +348,8 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.NavajoWhite;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1236, 644);
             Controls.Add(cmbSearchBy);
             Controls.Add(lblOrderSummary);
@@ -374,6 +378,8 @@
             Controls.Add(lblQuantity);
             Controls.Add(lblFoodName);
             Controls.Add(lblFoodID);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Customer";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Customer";
